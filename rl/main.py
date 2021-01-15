@@ -138,7 +138,7 @@ def main(args):
         # -- logging
 
         curr_returns = total_rewards(episodes, interval=True)
-        print('   return after update: ', curr_returns[0][1])
+        print('   return after update {}: '.format(batch), curr_returns[0][1])
 
         # Tensorboard
         writer.add_scalar('policy/actions_train', episodes[0][0].actions.mean(), batch)
