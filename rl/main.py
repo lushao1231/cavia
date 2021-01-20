@@ -122,7 +122,6 @@ def main(args):
                               device=args.device)
 
     for batch in range(args.num_batches):
-
         # get a batch of tasks
         tasks = sampler.sample_tasks(num_tasks=args.meta_batch_size)
 

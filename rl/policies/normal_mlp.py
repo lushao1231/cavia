@@ -122,7 +122,6 @@ class CaviaMLPPolicy(Policy, nn.Module):
             self.context_params = self.context_params - step_size * grads
         else:
             self.context_params = self.context_params - step_size * grads.detach()
-
         return OrderedDict(self.named_parameters())
 
     def reset_context(self):
