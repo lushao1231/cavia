@@ -17,6 +17,9 @@ from policies.categorical_mlp import CategoricalMLPPolicy
 from policies.normal_mlp import NormalMLPPolicy, CaviaMLPPolicy
 from sampler import BatchSampler
 
+import time
+from datetime import timedelta
+
 
 def get_returns(episodes_per_task):
 
@@ -174,5 +177,7 @@ def main(args):
 
 if __name__ == '__main__':
     args = parse_args()
-
+    start_time = time.monotonic()
     main(args)
+    end_time = time.monotonic()
+    print(timedelta(seconds=end_time-start_time))
